@@ -29,7 +29,7 @@ pipeline {
                     sh 'npm install --force'
 
                     // audit fix
-                    sh 'npm audit fix --force'
+                   // sh 'npm audit fix --force'
 		  
                     
                     // Build the React app
