@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Change directory to the subfolder 'PharmaCareServer'
+                dir('PharmaCareServer') {
+                    // Run Maven build commands
+                    sh 'mvn clean install'
+                }
+            }
+        }
+		
+		stage('Start Spring App') {
+            steps {
+                // Start the Spring App
+                sh 'java -jar PharmaCareServer/target/pharmacare.jar &'
+            }
+        }
+        
+        stage('Start React App') {
+            steps {
+                dir('PharmaCareClient') {
+					// Enter into root user
+                    sh 'sudo su'
+					
+                    // Install dependencies
+                    sh 'npm install'
+                    
+                    // Build the React app
+                    // sh 'npm run build'
+                    
+                    // Start the React app (assumed to use npm start)
+                    sh 'npm start &'
+                }
+            }
+        }
+    }
+}
