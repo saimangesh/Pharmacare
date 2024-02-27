@@ -27,10 +27,6 @@ pipeline {
 					
                     // Install dependencies
                     sh 'npm install --force'
-
-                    // audit fix
-                   // sh 'npm audit fix --force'
-		  
                     
                     // Build the React app
                     // sh 'npm run build'

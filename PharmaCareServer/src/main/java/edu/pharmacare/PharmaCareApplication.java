@@ -2,7 +2,6 @@ package edu.pharmacare;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,9 +16,6 @@ public class PharmaCareApplication implements CommandLineRunner {
 
 	@Autowired
 	private HomeService homeService;
-	
-	@Value("${allowed.orgins}")
-	private String allowedOrigins;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PharmaCareApplication.class, args);
@@ -35,15 +31,17 @@ public class PharmaCareApplication implements CommandLineRunner {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins(allowedOrigins);
+//				registry.addMapping("/**").allowedOrigins("http://localhost:3000", "http://localhost:4000");
+				registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST", "PUT", "DELETE")
+						.allowedHeaders("*");
 			}
 		};
 	}
 
 	@Override
 	public void run(String... args) {
-//		homeService.loadPharmacyData();
-//		homeService.loadNutritionData();
+	//	homeService.loadPharmacyData();
+		//homeService.loadNutritionData();
 	}
 
 }
