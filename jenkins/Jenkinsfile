@@ -26,10 +26,10 @@ pipeline {
                     sh 'sudo su'
 					
                     // Install dependencies
-                    sh 'npm install'
+                    sh 'npm install --force'
                     
                     // Build the React app
-                    // sh 'npm run build'
+                     sh 'npm audit fix --force'
                     
                     // Start the React app (assumed to use npm start)
                     sh 'npm start &'
