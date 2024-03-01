@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Change directory to the subfolder 'PharmaCareServer'
+                dir('PharmaCareServer') {
+                    // Run Maven build commands
+                    sh 'mvn clean install'
+                }
+            }
+        }
+	stage('Execute Shell Script') {
+            steps {
+		script {
+                	// Run the shell script
+			sh '''
+   				sudo su
+       				chmod +x jenkins/script.sh
+	   			./jenkins/script.sh
+			'''
+                }                
+            }
+        }
+    }
+}
