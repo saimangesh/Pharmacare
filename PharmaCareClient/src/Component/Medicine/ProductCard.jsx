@@ -67,19 +67,7 @@ export const ProductCard = (props) => {
                 alt={props.diseaseCategory}
               />
             )}
-            <div className="btn-wrapper">
-              <button className="product-btn" aria-label="Add to Whishlist">
-                <ion-icon name="heart-outline" />
-                <div className="tooltip">Add to Whishlist</div>
-              </button>
-              <button
-                className="product-btn"
-                onClick={() => handalClick(props.id)}
-                aria-label="Quick View"
-              >
-                <ion-icon name="eye-outline" />
-                <div className="tooltip">Quick View</div>
-              </button>
+            <div className="btn-wrapper">              
             </div>
           </figure>
           <div className="rating-wrapper">
