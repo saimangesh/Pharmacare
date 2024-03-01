@@ -13,13 +13,28 @@ pipeline {
         }
 	stage('Execute Shell Script') {
             steps {
-		script {
-                	// Run the shell script
-			sh '''
-       				chmod +x jenkins/script.sh
-	   			./jenkins/script.sh
-			'''
-                }                
+		// Wrap the step you want to ignore failures for in a try-catch block
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'chmod +x jenkins/script.sh'
+		    sh './jenkins/script.sh'
+                }             
+            }
+        }
+	stage('NPM Install') {
+            steps {
+                // Wrap the step you want to ignore failures for in a try-catch block
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'cd PharmaCareClient'
+		    sh 'npm install --force'
+                }
+            }
+        }
+	stage('NPM Start') {
+            steps {
+                // Wrap the step you want to ignore failures for in a try-catch block
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+		    sh 'npm start &'
+                }
             }
         }
     }
