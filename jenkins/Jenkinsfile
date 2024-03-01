@@ -15,6 +15,7 @@ pipeline {
             steps {
                 // Run the shell script
 		sh 'sudo su'
+		sh 'pwd'
 		sh 'chmod +x script.sh'
                 sh './script.sh'
             }
