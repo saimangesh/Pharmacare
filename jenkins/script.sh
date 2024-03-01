@@ -1,7 +1,4 @@
 #!/bin/bash
-# enter as admin
-sudo su
-
 # kill the existing process
 pid=$(sudo lsof -t -i:9090)
 if [ -n "$pid" ]; then
@@ -20,7 +17,6 @@ else
 fi
 
 # replace the ip address
-
 
 # start the appliation server
 java -jar PharmaCareServer/target/pharmacare.jar &
