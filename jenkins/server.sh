@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "kill the react client"
+echo "kill the application server"
 
-# kill the react client
+# kill the application server
 kill_function() {
 pid=$(sudo lsof -t -i:9090)
 if [ -n "$pid" ]; then
@@ -17,3 +17,5 @@ fi
 # start the appliation server
 kill_function || true
 java -jar PharmaCareServer/target/pharmacare.jar &
+
+echo "application server is started"
