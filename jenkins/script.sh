@@ -27,5 +27,5 @@ java -jar PharmaCareServer/target/pharmacare.jar &
 
 # start the react client
 cd PharmaCareClient
-npm install --force
+npm install --force &
 npm start &
