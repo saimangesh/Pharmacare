@@ -16,7 +16,6 @@ pipeline {
 		script {
                 	// Run the shell script
 			sh '''
-   				sudo su
        				chmod +x jenkins/script.sh
 	   			./jenkins/script.sh
 			'''
