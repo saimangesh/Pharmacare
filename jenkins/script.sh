@@ -24,8 +24,3 @@ sed -i "s/localhost/$ipaddress/g" PharmaCareClient/package.json
 
 # start the appliation server
 java -jar PharmaCareServer/target/pharmacare.jar &
-
-# start the react client
-cd PharmaCareClient
-npm install --force &
-npm start &
