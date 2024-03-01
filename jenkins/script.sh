@@ -21,6 +21,3 @@ ipaddress=`curl http://checkip.amazonaws.com`
 sed -i "s/localhost/$ipaddress/g" PharmaCareClient/src/Helper/Axios.js
 sed -i "s/localhost/$ipaddress/g" PharmaCareClient/package.json
 
-
-# start the appliation server
-java -jar PharmaCareServer/target/pharmacare.jar &
