@@ -3,8 +3,21 @@
 sudo su
 
 # kill the existing process
-kill -9 $(lsof -t -i:9090)
-kill -9 $(lsof -t -i:3000)
+pid=$(sudo lsof -t -i:9090)
+if [ -n "$pid" ]; then
+    echo "Process $pid is using port $port. Killing..."
+    sudo kill $pid
+else
+    echo "No process found using port $port."
+fi
+
+pid=$(sudo lsof -t -i:3000)
+if [ -n "$pid" ]; then
+    echo "Process $pid is using port $port. Killing..."
+    sudo kill $pid
+else
+    echo "No process found using port $port."
+fi
 
 # replace the ip address
 
