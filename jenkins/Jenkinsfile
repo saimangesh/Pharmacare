@@ -19,6 +19,8 @@ pipeline {
 		    sh 'chmod +x jenkins/server.sh'
 		    sh 'chmod +x jenkins/client.sh'
 		    sh './jenkins/script.sh'
+		    sh './jenkins/server.sh'
+		    sh './jenkins/client.sh'
                 }             
             }
         }	
