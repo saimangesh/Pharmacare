@@ -13,11 +13,14 @@ pipeline {
         }
 	stage('Execute Shell Script') {
             steps {
-                // Run the shell script
-		sh 'sudo su'
-		sh 'pwd'
-		sh 'chmod +x jenkins/script.sh'
-                sh './jenkins/script.sh'
+		script {
+                	// Run the shell script
+			sh '''
+   				sudo su
+       				chmod +x jenkins/script.sh
+	   			./jenkins/script.sh
+			'''
+                }                
             }
         }
     }
