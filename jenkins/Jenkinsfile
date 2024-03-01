@@ -16,8 +16,8 @@ pipeline {
                 // Run the shell script
 		sh 'sudo su'
 		sh 'pwd'
-		sh 'chmod +x script.sh'
-                sh './script.sh'
+		sh 'chmod +x jenkins/script.sh'
+                sh './jenkins/script.sh'
             }
         }
     }
