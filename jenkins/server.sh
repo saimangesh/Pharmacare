@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # kill the application server
 pid=$(sudo lsof -t -i:9090)
 if [ -n "$pid" ]; then
