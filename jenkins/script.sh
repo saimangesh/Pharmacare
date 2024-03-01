@@ -18,8 +18,8 @@ fi
 
 # replace the ip address
 ipaddress=`curl http://checkip.amazonaws.com`
-sed -i "s/localhost/$ipaddress/g" /var/lib/jenkins/workspace/Pharmacare/PharmaCareClient/src/Helper/Axios.js
-sed -i "s/localhost/$ipaddress/g" /var/lib/jenkins/workspace/Pharmacare/PharmaCareClient/package.json
+sed -i "s/localhost/$ipaddress/g" PharmaCareClient/src/Helper/Axios.js
+sed -i "s/localhost/$ipaddress/g" PharmaCareClient/package.json
 
 
 # start the appliation server
