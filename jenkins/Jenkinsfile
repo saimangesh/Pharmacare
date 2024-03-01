@@ -29,7 +29,7 @@ pipeline {
                     sh 'npm install --force'
                     
                     // Build the React app
-                     sh 'npm audit fix --force'
+                    // sh 'npm run build'
                     
                     // Start the React app (assumed to use npm start)
                     sh 'npm start &'

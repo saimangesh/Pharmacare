@@ -216,7 +216,7 @@ export const Cart = () => {
                         <strong className="text-muted">
                           Shipping and handling
                         </strong>
-                        <strong>USD 100.00</strong>
+                        <strong>USD 7.00</strong>
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Tax</strong>
