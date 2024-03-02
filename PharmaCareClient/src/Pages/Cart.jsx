@@ -210,7 +210,7 @@ export const Cart = () => {
                     <ul className="list-unstyled mb-4">
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Order Subtotal </strong>
-                        <strong>USD {totalAmount}</strong>
+                        <strong>USD {Math.ceil((totalAmount * 100)) / 100}</strong>
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">
@@ -224,7 +224,7 @@ export const Cart = () => {
                       </li>
                       <li className="d-flex justify-content-between py-3 border-bottom">
                         <strong className="text-muted">Total</strong>
-                        <h3 className="font-weight-bold">USD {totalAmount + 100}</h3>
+                        <h3 className="font-weight-bold">USD {Math.ceil((totalAmount + 7) * 100) / 100}</h3>
                       </li>
                     </ul>
                     <button
