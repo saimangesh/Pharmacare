@@ -223,10 +223,10 @@ export const ListUsers = ({ data, setLoading }) => {
   }, [filterText, resetPaginationToggle]);
 
   const paginationComponentOptions = {
-    rowsPerPageText: 'Filas por página',
-    rangeSeparatorText: 'de',
+    rowsPerPageText: 'Rows Per Page',
+    rangeSeparatorText: 'of',
     selectAllRowsItem: true,
-    selectAllRowsItemText: 'Todos',
+    selectAllRowsItemText: 'All',
   };
 
   return (

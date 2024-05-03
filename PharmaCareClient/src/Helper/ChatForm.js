@@ -6,7 +6,7 @@ class ChatForm extends Component {
   render() {
     return (
       <ChatBot
-        headerTitle="Speech Recognition"
+        headerTitle="Personal Chatbot"
         recognitionEnable={true}
         steps={[
           {

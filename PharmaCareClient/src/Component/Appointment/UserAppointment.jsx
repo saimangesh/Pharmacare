@@ -132,10 +132,10 @@ export const UserAppointment = (props) => {
 
 
   const paginationComponentOptions = {
-    rowsPerPageText: 'Filas por página',
-    rangeSeparatorText: 'de',
+    rowsPerPageText: 'Rows per page',
+    rangeSeparatorText: 'of',
     selectAllRowsItem: true,
-    selectAllRowsItemText: 'Todos',
+    selectAllRowsItemText: 'All',
   };
 
 

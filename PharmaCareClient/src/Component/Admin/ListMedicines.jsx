@@ -206,10 +206,10 @@ export const ListMedicines = ({ data, setLoading }) => {
 
 
   const paginationComponentOptions = {
-    rowsPerPageText: 'Filas por página',
-    rangeSeparatorText: 'de',
+    rowsPerPageText: 'Rows Per Page',
+    rangeSeparatorText: 'of',
     selectAllRowsItem: true,
-    selectAllRowsItemText: 'Todos',
+    selectAllRowsItemText: 'All',
   };
 
 
