@@ -13,7 +13,7 @@ pipeline {
         }
 	stage('Deploy') {
             steps {
-		// Wrap the step you want to ignore failures for in a try-catch block
+		// Wrap the step you want to ignore failures for in a try-catch blocks
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     sh 'chmod +x jenkins/script.sh'
 		    sh 'chmod +x jenkins/server.sh'

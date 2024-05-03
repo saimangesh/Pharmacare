@@ -40,7 +40,7 @@ public class PharmaCareApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-	//	homeService.loadPharmacyData();
+	//	 homeService.loadPharmacyData();
 		//homeService.loadNutritionData();
 	}
 
